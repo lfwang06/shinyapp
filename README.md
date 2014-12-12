@@ -1,2 +1,2 @@
-shinyapp
+Data Products Project
 ========
