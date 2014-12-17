@@ -52,7 +52,7 @@ The survival rate ln male:
 survival[survival$category=="male",]$rate
 ```
 
-Further interest:
+Further interest: 
 
 1.Was there higher survival rate in female than in male?
 
