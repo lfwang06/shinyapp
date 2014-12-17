@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survival of passengers on the Titanic</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Survival of passengers on the Titanic">
+  <meta name="author" content="lfwang06">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/slides" 
+    src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Survival of passengers on the Titanic</h1>
+    <h2>Find survival rate in each category</h2>
+    <p>lfwang06<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>About the data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The interactive application is based on Titanic dataset in the R Datasets Package.</p>
+
+<pre><code class="r">library(datasets)
+data(Titanic)
+</code></pre>
+
+<p>The data set provides information on the fate of passengers on the fatal maider voyage of Titanic, summarized according to economic status(class),gender,age and survival.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Visualization on the survival information</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The application produces barplots on different summrarizing factors.</p>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAq1BMVEX9/v0AAAAAADkAAGUAOWUAOY8AZo8AZrU5AAA5ADk5AGU5OQA5OY85ZmU5ZrU5j9pMTExlAABlADllAGVlOQBlOTllOY9lj49ltbVltf2POQCPOTmPOWWPZgCPjzmPj2WPtY+P27WP29qP2/2Wlpa1ZgC1Zjm1tWW124+1/rW1/tq1/v3Dw8PajznatWXa24/a/rXa/tra/v3m5ub9tWX924/9/rX9/tr9/v0jHGp2AAAAOXRSTlP//////////////////////////////////////////////////////////////////////////wA6rGVAAAAACXBIWXMAAAsSAAALEgHS3X78AAANzUlEQVR4nO3dAX+bxgGG8WJHQ02z0TjtWtnbmk1Vt0TV2mqSzff/ZOMOkJGMgLMiuLv3eX5tHNvClvgHOCQEX+Uk2VdT3wGaJuBFA1404EUDXjTgRQNeNOBFA1404EUDXjTgRQNeNOBFA1404EUDXjTgRQNeNOBFA1404EUDXjTgRQNetDjg17dJcv/U8e33j2e/ePzN5U0y3w/5lemu/ceGUhTwxj1JVq4TtbGlyW7Q1ENv521RwC9v7p+M43ZWWK5v75+2s/mfk/k39t9CmqzM99L6k3xR/CMplurmEl9M+GOSmI+JXXVkxYdNnpc/5qfk77Pie8XXCutyYnu7VfkTDrctf8S0c2J4kcCXy18D3gD+1xiub+d7I7R4/iSxusfwiV1nVPBp+Vle/5i694/VxH88wx/d1nm1M11RwNuZXiA04Vd2gd3ni6ReG1SfmAnMF07gN+U3zSp8eWNXCHbBXpmF/P2j+adlvlJPYG9n/tK87ebw8wMoCvjcLnfHq3pjlBUWtdDhk3JIcApv+Sr4hV1us2RX/hjz6eFG1cSHH3t8W/sjwigS+HJ1fwpf/PXzrf1S+XX7SXHD5CV8NeF5+PKH1hO3wdc/IoyigM/M3E/NzC84suQAn6fzH8zAqzSuPjFL/vKmC76x+j6FryduW9UDP3qN5bAcuNXw1V55aVx9skj6lvjGgO0Uvp7Y3OR0cAf8+Bn5egP87+dVfbn7dthlLz8xVJvMjNXOwjd2507g64nNb7z//WR3DnjyP+BFA1404EUDXjTgRQNe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" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Find the survival rate for each category</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>For example:</p>
+
+<p>The survival rate in female:</p>
+
+<pre><code>## [1] 0.7319
+</code></pre>
+
+<p>The survival rate ln male:</p>
+
+<pre><code>## [1] 0.212
+</code></pre>
+
+<p>Further interest:</p>
+
+<ol>
+<li><p>Was there higher survival rate in female than in male?</p></li>
+<li><p>How was the &quot;women and children first&quot; policy in the third class?</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Other information</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>These data were originally collected by the British Board of Trade in their ivestigation of the sinking. Note that there is not complete agreement among primary sources as to the exact numbers on board and rescued. </p>
+
+<p>Link to the App:</p>
+
+<p><a href="https://lfwang06.shinyapps.io/TitanicApp/">https://lfwang06.shinyapps.io/TitanicApp/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='About the data'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Visualization on the survival information'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Find the survival rate for each category'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Other information'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
