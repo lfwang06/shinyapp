@@ -9,7 +9,7 @@ https://lfwang06.shinyapps.io/TitanicApp/
 
 Presentation in Slidify
 
-http://rpubs.com/lfwang06/49846
+http://rpubs.com/lfwang06/49855
 
 Presentation in R Presenter
 
