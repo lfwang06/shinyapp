@@ -1,7 +1,7 @@
 Survival of passengers on the Titanic
 ========================================================
 author: lfwang06
-date: Wed Dec 17 12:48:49 2014
+date: 12/16/2014
 
 About the data
 ========================================================
@@ -53,5 +53,5 @@ These data were originally collected by the British Board of Trade in their ives
 
 Link to the App:
 
-https://lfwang06.shinyapps.io/TitanicApp/
+https://lfwang06.shinyapps.io/TitanicApps/
 
