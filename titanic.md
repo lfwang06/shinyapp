@@ -40,7 +40,7 @@ The survival rate ln male:
 [1] 0.212
 ```
 
-Further interest:
+Further interest:  
 
 1.Was there higher survival rate in female than in male?
 
