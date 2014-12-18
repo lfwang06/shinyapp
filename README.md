@@ -5,7 +5,7 @@ The fate of passengers on the fatal maiden voyage of the Titanic according to ec
 
 Link to the App:
 
-https://lfwang06.shinyapps.io/TitanicApp/
+https://lfwang06.shinyapps.io/TitanicApps/
 
 Presentation in Slidify
 
